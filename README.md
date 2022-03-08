@@ -4,7 +4,7 @@ A container that will echo back relevant information about any incoming request,
 ```bash
 
 LOCATION=eastus2
-BASENAME=cdw-lumentesting-20210215
+BASENAME=cdw-lumentesting-20220215
 REGISTRY_NAME=cdwms
 REGISTRY_PASSWORD=XXXX
 

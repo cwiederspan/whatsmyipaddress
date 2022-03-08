@@ -17,13 +17,14 @@ if (app.Environment.IsDevelopment()) {
 
 app.MapGet("/", (HttpRequest request) => {
 
-    return request; //.HttpContext; //.ToString();
+    var data = new {
+        Ipv4Address = request.HttpContext.Connection.RemoteIpAddress?.MapToIPv4()?.ToString(),
+        ForwardFor = request.Headers["X-Forwarded-For"],
+        ForwardProto = request.Headers["X-Forwarded-Proto"],
+        ForwardHost = request.Headers["X-Forwarded-Host"]
+    };
 
-    // var data = new EchoData {
-    //     IPv4Address = request.HttpContext.Connection.RemoteIpAddress?.MapToIPv4().ToString()
-    // };
-
-    // return data;
+    return data;
 })
 .WithName("Echo");
 
