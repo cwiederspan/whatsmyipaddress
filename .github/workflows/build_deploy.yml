@@ -42,15 +42,6 @@ jobs:
       url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
 
     steps:
-    # - name: Deploy to Azure Web App
-    #   id: deploy-to-webapp
-    #   uses: azure/webapps-deploy@v2
-    #   with:
-    #     app-name: 'cdw-privateappsvc-20220413-docker'
-    #     slot-name: 'production'
-    #     publish-profile: ${{ secrets.AzureAppService_PublishProfile_be5b353516814ec986fef9811b62d2ef }}
-    #     images: 'cdwms.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_7237616bd9cc4e6c8b785dc51e237c2f }}/whatsmyip:${{ github.sha }}'
-
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
